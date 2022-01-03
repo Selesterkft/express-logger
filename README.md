@@ -1,4 +1,4 @@
-# @mategyf/express-logger
+# @selesterkft/express-logger
 
 Simple wrapper for [winston](https://www.npmjs.com/package/winston) and [morgan](https://www.npmjs.com/package/morgan) for use in Express webapps.
 
@@ -7,13 +7,13 @@ Simple wrapper for [winston](https://www.npmjs.com/package/winston) and [morgan]
 If you use `npm`:
 
 ```bash
-npm install @mategyf/express-logger
+npm install @selesterkft/express-logger
 ```
 
 Or if you use `yarn`:
 
 ```bash
-yarn add @mategyf/express-logger
+yarn add @selesterkft/express-logger
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ For logging http calls, use `logger.middleware()` as an Express middleware.
 
 ```javascript
 import express from 'express';
-import logger from '@mategyf/express-logger';
+import logger from '@selesterkft/express-logger';
 
 const app = express();
 app.use(logger.middleware());
@@ -41,7 +41,7 @@ app.listen(PORT, () => {
 ```
 
 ```javascript
-import logger from '@mategyf/express-logger';
+import logger from '@selesterkft/express-logger';
 
 export default function doSomething() {
   logger.error('Something was done!');
