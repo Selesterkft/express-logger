@@ -1,0 +1,33 @@
+{
+  "name": "@selesterkft/express-logger",
+  "version": "1.1.0",
+  "description": "Logger for ExpressJS using winston",
+  "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Selesterkft/express-logger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Selesterkft/express-logger/issues"
+  },
+  "homepage": "https://github.com/Selesterkft/express-logger#readme",
+  "dependencies": {
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4"
+  }
+}
