@@ -4,13 +4,7 @@ Simple wrapper for [winston](https://www.npmjs.com/package/winston) and [morgan]
 
 ## Installation
 
-If you use `npm`:
-
-```bash
-npm install @selesterkft/express-logger
-```
-
-Or if you use `yarn`:
+Install the package with `yarn`:
 
 ```bash
 yarn add @selesterkft/express-logger
@@ -27,6 +21,7 @@ import express from 'express';
 import logger from '@selesterkft/express-logger';
 
 const app = express();
+// Note that we do call the middleware() function.
 app.use(logger.middleware());
 
 const PORT = 4000;
@@ -47,3 +42,18 @@ export default function doSomething() {
   logger.error('Something was done!');
 }
 ```
+
+## Log files
+
+Log files will be written to the `logs/` folder, so don't forget to add it to your `.gitignore` file.
+
+```text
+# Logs
+logs/
+```
+
+## Console logging
+
+Express-logger will read `NODE_ENV` to determine the current _node_ environment, and, unless it is `'production'` or `'test'`, will output the logs to the console. Be sure to set the node environment to `'production'` when appropriate to suppress console logging.
+
+Using Jest, for example, should automatically set the environment to `'test'`.
