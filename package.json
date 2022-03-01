@@ -1,6 +1,6 @@
 {
   "name": "@selesterkft/express-logger",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Logger for ExpressJS using winston",
   "main": "lib/index.js",
   "files": [
