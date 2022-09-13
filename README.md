@@ -12,7 +12,13 @@ yarn add @selesterkft/express-logger
 
 ## Usage
 
-This package supports two levels of logging: `logger.info()` and `logger.error()`. Both are called with a message string.
+This package supports three levels of logging, in descending order of severity:
+
+- `logger.error()`
+- `logger.info()`
+- `logger.debug()`
+
+All of them are called with a single parameter which can be a simple string or a javascript object. Objects will be parsed to JSON. Log files will have a basic format: a JSON entry of any logging event per line.
 
 For logging http calls, use `logger.middleware()` as an Express middleware.
 
@@ -41,6 +47,16 @@ import logger from '@selesterkft/express-logger';
 export default function doSomething() {
   logger.error('Something was done!');
 }
+```
+
+For logging request and response bodies (only meaningful in debug mode), use `logger.bodyMiddleware()` as a middleware. Do **not** call it, and make sure to use it after parsing the request body.
+
+```javascript
+// ...
+app.use(express.json());
+app.use(logger.middleware());
+app.use(logger.bodyMiddleware);
+// ...
 ```
 
 ## Log files
